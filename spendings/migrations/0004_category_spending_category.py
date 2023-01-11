@@ -7,21 +7,33 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('spendings', '0003_spending_amount_spent'),
+        ("spendings", "0003_spending_amount_spent"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=200)),
             ],
         ),
         migrations.AddField(
-            model_name='spending',
-            name='category',
-            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.DO_NOTHING, to='spendings.category'),
+            model_name="spending",
+            name="category",
+            field=models.ForeignKey(
+                default="",
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                to="spendings.category",
+            ),
             preserve_default=False,
         ),
     ]
