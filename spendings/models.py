@@ -24,3 +24,6 @@ class Spending(models.Model):
     description = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return f"{self.date_spent}-{self.description}-{self.amount_spent}"
