@@ -1,0 +1,8 @@
+{% if spending_list %}
+<ul>
+  {% for spending in spending_list%}
+  <li> {{ spending }} </li>
+  {% endfor %}
+{% else %}
+  <p> No spendings available </p>
+{% endif %}
