@@ -7,3 +7,6 @@ def index(request):
     spendings = models.Spending.objects.order_by("date_spent")
     context = {"spending_list": spendings}
     return render(request, "spendings/index.html", context)
+
+def details(request):
+    pass

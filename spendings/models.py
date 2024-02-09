@@ -26,4 +26,4 @@ class Spending(models.Model):
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return f"{self.date_spent}-{self.description}-{self.amount_spent}"
+        return f"{self.date_spent}-{self.description}-{self.amount_spent:.2f}-{self.category}"
