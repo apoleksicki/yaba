@@ -1,6 +1,5 @@
 from datetime import date
 from decimal import Decimal
-import os
 from django.test import TestCase
 
 from spendings import models
