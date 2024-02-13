@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 
 
@@ -16,6 +18,11 @@ class Account(models.Model):
 
     def __str__(self) -> str:
         return str(self.name)
+
+    @property
+    def balance(self) -> Decimal:
+        transactions = Transaction.objects.filter(account=self)
+        return sum([t.amount_spent for t in transactions])
 
 
 class Transaction(models.Model):
