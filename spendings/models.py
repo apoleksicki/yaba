@@ -19,7 +19,7 @@ class Account(models.Model):
 
 
 class Transaction(models.Model):
-    date_spent = models.DateField("date spent")
+    date_spent = models.DateField("date created")
     amount_spent = models.DecimalField(max_digits=8, decimal_places=2)
     description = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
