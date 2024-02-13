@@ -9,14 +9,14 @@ class TestSpendingsView(TestCase):
     def setUp(self) -> None:
         self.category = models.Category.objects.create(name="fun")
         self.account = models.Account.objects.create(name="foo")
-        self.spending_1 = models.Spending.objects.create(
+        self.spending_1 = models.Transaction.objects.create(
             date_spent=date.fromisoformat("2023-01-11"),
             amount_spent=Decimal(11.5),
             description="cinema",
             category=self.category,
             account=self.account,
         )
-        self.spending_2 = models.Spending.objects.create(
+        self.spending_2 = models.Transaction.objects.create(
             date_spent=date.fromisoformat("2023-01-10"),
             amount_spent=Decimal(1.5),
             description="newspaper",

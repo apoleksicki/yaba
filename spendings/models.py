@@ -18,7 +18,7 @@ class Account(models.Model):
         return str(self.name)
 
 
-class Spending(models.Model):
+class Transaction(models.Model):
     date_spent = models.DateField("date spent")
     amount_spent = models.DecimalField(max_digits=8, decimal_places=2)
     description = models.CharField(max_length=200)
