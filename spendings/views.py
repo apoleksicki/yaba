@@ -8,5 +8,6 @@ def index(request):
     context = {"spending_list": spendings}
     return render(request, "spendings/index.html", context)
 
+
 def details(request):
     pass
