@@ -47,3 +47,9 @@ class Budget(models.Model):
         return Transaction.objects.filter(
             date_spent__gte=self.begins_on, date_spent__lte=self.ends_on
         )
+
+
+class Estimate(models.Model):
+    amount = models.DecimalField(max_digits=8, decimal_places=2)
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
+    budget = models.ForeignKey(Budget, on_delete=models.CASCADE)
