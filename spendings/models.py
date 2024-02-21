@@ -53,3 +53,6 @@ class Estimate(models.Model):
     amount = models.DecimalField(max_digits=8, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     budget = models.ForeignKey(Budget, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ["category", "budget"]
