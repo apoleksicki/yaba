@@ -6,3 +6,5 @@ tests:
 style:
 	ruff format spendings/ yaba/ manage.py
 
+runserver:
+	python manage.py runserver
