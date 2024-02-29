@@ -48,6 +48,9 @@ class Budget(models.Model):
             date_spent__gte=self.begins_on, date_spent__lte=self.ends_on
         )
 
+    def __str__(self) -> None:
+        return f"{self.begins_on} - {self.ends_on}"
+
 
 class Estimate(models.Model):
     amount = models.DecimalField(max_digits=8, decimal_places=2)

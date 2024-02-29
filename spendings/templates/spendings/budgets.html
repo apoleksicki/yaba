@@ -1,0 +1,8 @@
+{% if budgets%}
+<ul>
+  {% for budget in budgets%}
+  <li> {{ budget }} </li>
+  {% endfor %}
+{% else %}
+  <p> No budgets available </p>
+{% endif %}

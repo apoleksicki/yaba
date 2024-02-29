@@ -67,3 +67,11 @@ class TestBudget(TestCase):
             build_transaction(d)
 
         self.assertEqual(transactions_within, list(budget.transactions))
+
+    def test_str_return_dates(self) -> None:
+        budget = models.Budget.objects.create(
+            begins_on=date.fromisoformat("2024-02-01"),
+            ends_on=date.fromisoformat("2024-02-29"),
+        )
+        expected = f"{budget.begins_on} - {budget.ends_on}"
+        self.assertEqual(expected, str(budget))
